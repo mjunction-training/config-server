@@ -10,6 +10,10 @@ spring:
 server:
   port: ${appPort:8082}
 
+info:
+  component: Spring Cloud Config server
+  
+
 eureka:
   client:
     serviceUrl:
