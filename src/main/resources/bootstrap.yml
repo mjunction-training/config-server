@@ -1,14 +1,20 @@
 spring:
   application:
     name: config-server
+  profiles:
+    active: cloud
   cloud:
     config:
+      discovery:
+        enabled: true
+      enabled: true
       server:
         git:
           uri: https://github.com/mjunction-training/config-files.git
+          basedir: target/config
 
 server:
-  port: ${appPort:8082}
+  port: ${appPort:8888}
 
 info:
   component: Spring Cloud Config server
