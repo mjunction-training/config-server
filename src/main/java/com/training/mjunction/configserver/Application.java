@@ -10,24 +10,19 @@ import org.springframework.context.annotation.Bean;
 
 import brave.sampler.Sampler;
 
-@SpringBootApplication
 @EnableConfigServer
+@SpringBootApplication
 @EnableAutoConfiguration
 public class Application extends SpringBootServletInitializer {
-
 	@Override
 	protected SpringApplicationBuilder configure(final SpringApplicationBuilder application) {
 		return application.sources(Application.class);
 	}
-
 	public static void main(final String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-	
-	
 	@Bean
-    public Sampler defaultSampler() {
-        return Sampler.ALWAYS_SAMPLE;
-    }
-
+    	public Sampler defaultSampler() {
+        	return Sampler.ALWAYS_SAMPLE;
+    	}
 }
